@@ -1,0 +1,18 @@
+import express from 'express';
+
+const app = express();
+const PORT = process.env.PORT ?? 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello, TypeScript with Express!');
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+// Test Jasmine Setup
+const myFunc = (num: number): number => {
+  return num * num;
+};
+export default myFunc;
