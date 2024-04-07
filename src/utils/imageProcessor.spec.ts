@@ -5,7 +5,12 @@ import path from 'path';
 
 describe('Image Processor', () => {
   const inputImagePath = path.join(__dirname, '..', 'assets', 'test-image.jpg');
-  const outputImagePath = path.join(__dirname, '..', 'assets', 'resized-test-image.jpg');
+  const outputImagePath = path.join(
+    __dirname,
+    '..',
+    'assets',
+    'resized-test-image.jpg',
+  );
 
   beforeEach(() => {
     // Ensure the output image is removed before each test if it exists
