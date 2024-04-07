@@ -4,12 +4,21 @@ import fs from 'fs';
 import path from 'path';
 
 describe('Image Processor', () => {
-  const inputImagePath = path.join(__dirname, '..', 'assets', 'test-image.jpg');
+  const inputImagePath = path.join(
+    __dirname,
+    '..',
+    '..',
+    'public',
+    'test_assets',
+    'encenadaport.jpg',
+  );
   const outputImagePath = path.join(
     __dirname,
     '..',
-    'assets',
-    'resized-test-image.jpg',
+    '..',
+    'public',
+    'test_assets',
+    'encenadaport_resized.jpg',
   );
 
   beforeEach(() => {
@@ -27,8 +36,8 @@ describe('Image Processor', () => {
   });
 
   it('should resize the image to the specified dimensions', async () => {
-    const width = 100;
-    const height = 100;
+    const width = 300;
+    const height = 300;
 
     await resizeImage(inputImagePath, width, height, outputImagePath);
 
