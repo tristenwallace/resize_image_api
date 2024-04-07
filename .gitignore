@@ -3,6 +3,7 @@ node_modules/
 
 # Build output directory
 dist/
+resized/
 
 # Environment configuration files
 .env
