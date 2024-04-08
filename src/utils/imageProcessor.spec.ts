@@ -3,7 +3,9 @@ import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
 
+// Group of tests for the imageProcessor functionality
 describe('Image Processor', () => {
+  // Paths for input and output images used in the tests
   const inputImagePath = path.join(
     __dirname,
     '..',
@@ -35,18 +37,19 @@ describe('Image Processor', () => {
     }
   });
 
+  // Test case for image resizing functionality
   it('should resize the image to the specified dimensions', async () => {
     const width = 300;
     const height = 300;
 
+    // Call the resizeImage function with test parameters
     await resizeImage(inputImagePath, width, height, outputImagePath);
 
-    // Verify the output image exists
+    // Check that the resized image file was created
     expect(fs.existsSync(outputImagePath)).toBeTrue();
 
     // Use sharp to read the resized image and verify its dimensions
     const resizedImage = await sharp(outputImagePath).metadata();
-
     expect(resizedImage.width).toEqual(width);
     expect(resizedImage.height).toEqual(height);
   });
